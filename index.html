@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As Andorinhas Voltaram</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte com estilo marcante para o título -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <!-- Canvas para o efeito de chuva de glitter/brilho no fundo -->
+  <canvas id="glitterCanvas"></canvas>
+
+  <header class="header">
+    <div class="logo">🪶 Neon Pride</div>
+    <nav class="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#bandeiras">Comunidade</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="swallow-icon swallow-left">🕊️</div>
+    
+    <!-- Frase Central com Glitter e Efeito Neon -->
+    <h1 class="glitter-text" data-text="AS ANDORINHAS VOLTARAM">
+      AS ANDORINHAS VOLTARAM
+    </h1>
+    
+    <p class="subtitle">Celebrando a diversidade, orgulho e liberdade em cores neon.</p>
+    
+    <button class="btn-neon" onclick="celebrar()">Espalhar Orgulho ✨</button>
+
+    <div class="swallow-icon swallow-right">🕊️</div>
+  </main>
+
+  <!-- Seção de Bandeiras LGBTQIAP+ -->
+  <section id="bandeiras" class="flags-section">
+    <h2>Nossas Cores, Nosso Orgulho 🌈</h2>
+    <div class="flags-grid">
+      
+      <!-- Bandeira Orgulho / LGBTQIAP+ tradicional -->
+      <div class="flag-card">
+        <div class="flag flag-pride"></div>
+        <p>Orgulho LGBTQIAP+</p>
+      </div>
+
+      <!-- Bandeira Trans -->
+      <div class="flag-card">
+        <div class="flag flag-trans"></div>
+        <p>Transgênero</p>
+      </div>
+
+      <!-- Bandeira Bissexual -->
+      <div class="flag-card">
+        <div class="flag flag-bi"></div>
+        <p>Bissexual</p>
+      </div>
+
+      <!-- Bandeira Lésbica -->
+      <div class="flag-card">
+        <div class="flag flag-lesbian"></div>
+        <p>Lésbica</p>
+      </div>
+
+      <!-- Bandeira Não-Binária -->
+      <div class="flag-card">
+        <div class="flag flag-nonbinary"></div>
+        <p>Não-Binário</p>
+      </div>
+
+      <!-- Bandeira Pansexual -->
+      <div class="flag-card">
+        <div class="flag flag-pan"></div>
+        <p>Pansexual</p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

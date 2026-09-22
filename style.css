@@ -1,1 +1,259 @@
+/* RESET E CORES BASE */
+:root {
+  --rosa-neon: #ff007f;
+  --verde-neon: #39ff14;
+  --amarelo-neon: #ccff00;
+  --azul-bebe: #89cff0;
+  --bg-dark: #0a0813;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* CANVAS DE GLITTER NO FUNDO */
+#glitterCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 2px solid var(--rosa-neon);
+  box-shadow: 0 0 15px var(--rosa-neon);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--azul-bebe);
+  text-shadow: 0 0 8px var(--azul-bebe);
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--amarelo-neon);
+  text-shadow: 0 0 10px var(--amarelo-neon);
+}
+
+/* SEÇÃO HERO (CENTRAL) */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* FRASE CENTRAL COM EFEITO GLITTER */
+.glitter-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  
+  /* Textura de Glitter com degradê neon */
+  background: linear-gradient(
+    45deg, 
+    var(--rosa-neon), 
+    var(--amarelo-neon), 
+    var(--verde-neon), 
+    var(--azul-bebe),
+    var(--rosa-neon)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Animações de brilho e movimento */
+  animation: shine 4s ease infinite, neonGlow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.6));
+}
+
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes neonGlow {
+  from {
+    filter: drop-shadow(0 0 10px var(--rosa-neon)) drop-shadow(0 0 20px var(--amarelo-neon));
+  }
+  to {
+    filter: drop-shadow(0 0 20px var(--verde-neon)) drop-shadow(0 0 35px var(--azul-bebe));
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--azul-bebe);
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* BOTÃO NEON */
+.btn-neon {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--bg-dark);
+  background: var(--verde-neon);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--verde-neon);
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background: var(--amarelo-neon);
+  box-shadow: 0 0 25px var(--amarelo-neon), 0 0 50px var(--amarelo-neon);
+  transform: scale(1.05);
+}
+
+/* ÍCONES DE ANDORINHAS FLUTUANTES */
+.swallow-icon {
+  font-size: 3rem;
+  position: absolute;
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+.swallow-left {
+  top: 20%;
+  left: 10%;
+  filter: drop-shadow(0 0 10px var(--azul-bebe));
+}
+
+.swallow-right {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 1.5s;
+  filter: drop-shadow(0 0 10px var(--rosa-neon));
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* BANDEIRAS LGBTQIAP+ */
+.flags-section {
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: rgba(10, 8, 19, 0.8);
+}
+
+.flags-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--amarelo-neon);
+  text-shadow: 0 0 10px var(--amarelo-neon);
+}
+
+.flags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flag-card {
+  background: #151128;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid var(--azul-bebe);
+  box-shadow: 0 0 10px rgba(137, 207, 240, 0.3);
+  transition: transform 0.3s;
+  width: 130px;
+}
+
+.flag-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--rosa-neon);
+  box-shadow: 0 0 20px var(--rosa-neon);
+}
+
+.flag {
+  height: 70px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.flag-card p {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* DEMAIS BANDEIRAS EM GRADIENTE */
+.flag-pride {
+  background: linear-gradient(to bottom, #e40303 16%, #ff8c00 16% 33%, #ffed00 33% 50%, #008026 50% 66%, #004dff 66% 83%, #750787 83%);
+}
+
+.flag-trans {
+  background: linear-gradient(to bottom, #5bcefa 20%, #f5abb9 20% 40%, #ffffff 40% 60%, #f5abb9 60% 80%, #5bcefa 80%);
+}
+
+.flag-bi {
+  background: linear-gradient(to bottom, #d60270 40%, #9b4f96 40% 60%, #0038a8 60%);
+}
+
+.flag-lesbian {
+  background: linear-gradient(to bottom, #d52d00 20%, #ff9a56 20% 40%, #ffffff 40% 60%, #d362a4 60% 80%, #a30262 80%);
+}
+
+.flag-nonbinary {
+  background: linear-gradient(to bottom, #fff433 25%, #ffffff 25% 50%, #9b59d0 50% 75%, #2c2c2c 75%);
+}
+
+.flag-pan {
+  background: linear-gradient(to bottom, #ff218c 33.3%, #ffd800 33.3% 66.6%, #21b1ff 66.6%);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .glitter-text {
+    font-size: 2.2rem;
+  }
+  .swallow-icon {
+    display: none;
+  }
+}

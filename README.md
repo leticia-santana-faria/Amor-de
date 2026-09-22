@@ -1,2 +1,2 @@
 # Amor-de
-raparig* que é amor
+que é amor
